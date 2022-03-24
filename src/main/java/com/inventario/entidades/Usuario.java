@@ -27,12 +27,6 @@ public class Usuario {
     @Column(name = "clave")
     private String clave;
 
-    /*
-     * @JsonManagedReference
-     * 
-     * @OneToOne(mappedBy = "usuario", fetch = FetchType.LAZY, cascade =
-     * CascadeType.ALL)
-     */
     @JsonManagedReference
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "usuario")
     private Empleado empleado;

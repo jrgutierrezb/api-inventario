@@ -29,7 +29,7 @@ public class DosisApi {
 	 private DosisRepository dosisRepository;
 	 
 	 @GetMapping("/empleado/{empleadoId}/dosis")
-	 public ResponseEntity<List<Dosis>> getDosis(@PathVariable("empleadoId") int empleadoId) {
+	 public ResponseEntity<List<Dosis>> obtenerDosisPorEmpleadoId(@PathVariable("empleadoId") int empleadoId) {
 
 	     List<Dosis> lstDosis = dosisRepository.findByEmpleadoId(empleadoId);
 
@@ -57,7 +57,7 @@ public class DosisApi {
 	    }
 
 	    @DeleteMapping("/empleado/{empleadoId}/dosis/{id}")
-	    public ResponseEntity<Void> borrarDosis(@PathVariable("empleadoId") int empleadoId, @PathVariable("id") int id) {
+	    public ResponseEntity<Void> eliminarDosis(@PathVariable("empleadoId") int empleadoId, @PathVariable("id") int id) {
 
 	        Optional<Empleado> optionalEmpleado = empleadoRepository.findById(empleadoId);
 
